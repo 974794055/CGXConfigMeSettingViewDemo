@@ -81,17 +81,18 @@
     self.tableView.backgroundColor = CGXConfigMeSettingBG;
     [self.tableView registerClass:[CGXConfigMeSettingCell class] forCellReuseIdentifier:@"CGXConfigMeSettingCell"];
     [self addSubview:self.tableView];
-    
     self.tableView.keyboardDismissMode = UIScrollViewKeyboardDismissModeOnDrag;
-    
-    if (self.headerView) {
-        self.tableView.tableHeaderView = self.headerView;
-    }
-    if (self.footerView) {
-        self.tableView.tableFooterView = self.footerView;
-    }
 }
-
+- (void)setHeaderView:(UIView *)headerView
+{
+    _headerView = headerView;
+    self.tableView.tableHeaderView = headerView;
+}
+- (void)setFooterView:(UIView *)footerView
+{
+    _footerView = footerView;
+    self.tableView.tableFooterView = footerView;
+}
 - (UIViewController*)viewController:(UIView *)view {
     for (UIView* next = [view superview]; next; next = next.superview) {
         UIResponder* nextResponder = [next nextResponder];
