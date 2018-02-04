@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "CGXConfigMeSettingView"    #存储库名称
-  s.version      = "0.0.3"      #版本号，与tag值一致
+  s.version      = "0.0.4"      #版本号，与tag值一致
   s.summary      = "a CGXConfigMeSettingView demo标签封装"  #简介
   s.description  = "a CGXConfigMeSettingView标签封装"  #描述
   s.homepage     = "https://github.com/974794055/CGXConfigMeSettingViewDemo"      #项目主页，不是git地址
