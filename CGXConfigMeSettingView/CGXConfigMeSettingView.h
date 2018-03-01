@@ -55,4 +55,6 @@
 @property (nonatomic , strong) UIView *headerView;
 @property (nonatomic , strong) UIView *footerView;
 
+- (void)replaceObjectAtIndexPath:(NSIndexPath *)indexPath AtIndexModel:(CGXConfigMeSettingModel *)model ItemModel:(CGXConfigMeSettingItemModel *)itemModel;
+
 @end

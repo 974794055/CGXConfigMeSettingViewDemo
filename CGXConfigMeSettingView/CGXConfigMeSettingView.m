@@ -234,7 +234,11 @@
     NSIndexPath *indexPathA = [NSIndexPath indexPathForRow:indexPath.row inSection:indexPath.section]; //刷新第0段第2行
     [self.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObjects:indexPathA,nil] withRowAnimation:UITableViewRowAnimationNone];
 }
-
+- (void)replaceObjectAtIndexPath:(NSIndexPath *)indexPath AtIndexModel:(CGXConfigMeSettingModel *)model ItemModel:(CGXConfigMeSettingItemModel *)itemModel
+{
+    [model.itemArray replaceObjectAtIndex:indexPath.row withObject:itemModel];
+    [self cgxReloadRow:indexPath];
+}
 -(void)dealloc {
     //移除通知
     [[NSNotificationCenter defaultCenter] removeObserver:self];
