@@ -236,7 +236,9 @@
 }
 - (void)replaceObjectAtIndexPath:(NSIndexPath *)indexPath AtIndexModel:(CGXConfigMeSettingModel *)model ItemModel:(CGXConfigMeSettingItemModel *)itemModel
 {
-    [model.itemArray replaceObjectAtIndex:indexPath.row withObject:itemModel];
+    [self.manager.modelArray replaceObjectAtIndex:indexPath.section withObject:model];
+    CGXConfigMeSettingModel *sectionModel = self.manager.modelArray[indexPath.section];
+    [sectionModel.itemArray replaceObjectAtIndex:indexPath.row withObject:itemModel];
     [self cgxReloadRow:indexPath];
 }
 -(void)dealloc {
